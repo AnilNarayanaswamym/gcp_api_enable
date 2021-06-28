@@ -20,7 +20,7 @@
 #}
 
 
-# Creates a GCS bucket to store tfstate.
+/* # Creates a GCS bucket to store tfstate.
 resource "google_storage_bucket" "tfstate" {
   name     = var.bucket_name
   location = var.region
@@ -29,7 +29,7 @@ resource "google_storage_bucket" "tfstate" {
   versioning {
     enabled = true
   }
-}
+} */
 
 # Enable services in newly created GCP Project.
 resource "google_project_service" "gcp_services" {
