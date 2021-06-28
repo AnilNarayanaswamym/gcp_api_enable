@@ -24,6 +24,11 @@
 resource "google_storage_bucket" "tfstate" {
   name     = var.bucket_name
   location = var.region
+  force_destroy = true
+  storage_class = var.storage-class
+  versioning {
+    enabled = true
+  }
 }
 
 # Enable services in newly created GCP Project.
