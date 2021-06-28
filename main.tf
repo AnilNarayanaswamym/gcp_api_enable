@@ -19,6 +19,13 @@
 #  labels          = var.labels
 #}
 
+
+# Creates a GCS bucket to store tfstate.
+resource "google_storage_bucket" "tfstate" {
+  name     = var.bucket_name
+  location = var.region
+}
+
 # Enable services in newly created GCP Project.
 resource "google_project_service" "gcp_services" {
   count   = length(var.gcp_service_list)
@@ -26,16 +33,4 @@ resource "google_project_service" "gcp_services" {
   service = var.gcp_service_list[count.index]
 
   disable_dependent_services = true
-}
-
-# Creates a GCS bucket to store tfstate.
-resource "google_storage_bucket" "tfstate" {
-  project       = var.project_id
-  name          = var.bucket_name
-  location      = var.region
-  force_destroy = true
-  storage_class = var.stroage_class
-  versioning {
-   enabled = true
-  }
 }
