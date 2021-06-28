@@ -18,3 +18,8 @@ variable "bucket_name" {
 description = "GCS Bucket name. Value should be unique ."
 type        = string
 }
+
+variable "storage-class" {
+  description = "The storage class of the Storage Bucket to create"
+  type        = string
+}
