@@ -3,7 +3,7 @@ bucket_name = "celb_tfstate"    # Put the desired GCS Bucket name.
 
 
 gcp_service_list = [
-  "bigquery-json.googleapis.com",     # BigQuery API
+  "bigquery.googleapis.com",          # BigQuery API
   "bigquerystorage.googleapis.com",   # BigQuery Storage API
   "cloudapis.googleapis.com",         # Google Cloud APIs
   "clouddebugger.googleapis.com",     # Stackdriver Debugger API
